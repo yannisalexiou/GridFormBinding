@@ -6,6 +6,9 @@ Ext.define('GridFormBinding.view.main.MainModel', {
 
     alias: 'viewmodel.main',
 
+    //About MVVM and Events
+    //https://www.sencha.com/forum/showthread.php?284465-Listening-model-changes-from-a-view-model
+
     data: {
         name: 'GridFormBinding',
 
@@ -16,6 +19,30 @@ Ext.define('GridFormBinding.view.main.MainModel', {
 
     //formulas can be used to achieve more advanced operations
     formulas : {
+
+        fullName: {
+            get: function (get) {
+                var ret = get('mainGrid.selection.firstName') || '',
+                    last = get('mainGrid.selection.lastName');
+
+                if (last) {
+                    ret += ' ' + last;
+                }
+
+                return ret;
+            },
+
+            // By providing the set method "fullName" is two-way bindable.
+            set: function (value) {
+                var space = value.indexOf(' '),
+                    split = (space < 0) ? value.length : space;
+
+                this.set({
+                    firstName: value.substring(0, split),
+                    lastName: value.substring(split + 1)
+                });
+            }
+        },
 
         mainGridRecord: {
             bind: {

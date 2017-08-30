@@ -4,5 +4,9 @@
 Ext.define('GridFormBinding.model.SupplierModel', {
     extend: 'Ext.data.Model',
 
-    fields: ['firstName', 'lastName', 'officeLocation', 'phoneNumber', 'email', 'latitude', 'longitude', {name :'debt', type: 'int'}, 'items' ]
+    fields: [
+        'firstName',
+        'lastName', 'officeLocation', 'phoneNumber', 'email', 'latitude', 'longitude',
+        {name :'debt', type: 'int'}, 'items'
+    ]
 });

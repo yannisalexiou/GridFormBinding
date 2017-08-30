@@ -88,7 +88,7 @@ Ext.define('GridFormBinding.view.main.compareSuppliersView', {
                     autoscroll: true,
 
                     bind : {
-                        title: '{mainGridRecord.firstName} {mainGridRecord.lastName}, {mainGridRecord.debt}€'
+                        title: '{fullName} {mainGridRecord.lastName}, {mainGridRecord.debt}€'
                     },
 
                     defaultType: 'textfield',

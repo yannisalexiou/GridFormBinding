@@ -76,11 +76,10 @@ Ext.define('GridFormBinding.view.main.Main', {
     },
 
     items: [{
-        title: 'Old School',
+
+        title: '{sampleText}',
         iconCls: 'fa-times',
-        bind: {
-            html: '<H1>Hardcoded text in View</H1>'
-        }
+        html: '<H1>Hardcoded text in View</H1>'
     }, {
         title: 'New Way',
         iconCls: 'fa-check',
