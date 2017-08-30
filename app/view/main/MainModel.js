@@ -44,6 +44,7 @@ Ext.define('GridFormBinding.view.main.MainModel', {
             }
         },
 
+        // We need to bind deep to be notified on each model change
         mainGridRecord: {
             bind: {
                 bindTo: '{mainGrid.selection}',
